@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "TCS Interview Experience — Cracking Campus Placement",
+    "guest": "Anubhav Dixit",
+    "company": "TCS",
+    "tag": "tech",
+    "ep": "EP 01",
+    "youtubeId": "dQw4w9WgXcQ",
+    "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "id": 2,
+    "title": "Capgemini Placement Process — Tips & Tricks",
+    "guest": "Prathmesh Adhav",
+    "company": "Capgemini",
+    "tag": "tech",
+    "ep": "EP 02",
+    "youtubeId": "jNQXAC9IVRw",
+    "youtubeUrl": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+  },
+  {
+    "id": 3,
+    "title": "LTI Mindtree Interview Experience",
+    "guest": "Varun Patil",
+    "company": "LTI Mindtree",
+    "tag": "tech",
+    "ep": "EP 03",
+    "youtubeId": "9bZkp7q19f0",
+    "youtubeUrl": "https://www.youtube.com/watch?v=9bZkp7q19f0"
+  },
+  {
+    "id": 4,
+    "title": "Accenture Interview Experience — What to Expect",
+    "guest": "Omkar Kolte",
+    "company": "Accenture",
+    "tag": "career",
+    "ep": "EP 04",
+    "youtubeId": "OPf0YbXqDm0",
+    "youtubeUrl": "https://www.youtube.com/watch?v=OPf0YbXqDm0"
+  },
+  {
+    "id": 5,
+    "title": "How to Get Started with Cyber Security",
+    "guest": "Siddhant Tambe",
+    "company": "Security Innovation",
+    "tag": "tech",
+    "ep": "EP 05",
+    "youtubeId": "ZYb_FSqkBVc",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ZYb_FSqkBVc"
+  },
+  {
+    "id": 6,
+    "title": "Hexaware Interview Experience",
+    "guest": "Priya Nair",
+    "company": "Hexaware",
+    "tag": "tech",
+    "ep": "EP 06",
+    "youtubeId": "aqz-KE-bpKQ",
+    "youtubeUrl": "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  },
+  {
+    "id": 7,
+    "title": "Cisco Interview Experience",
+    "guest": "Sanyukta Pawaskar",
+    "company": "Cisco",
+    "tag": "tech",
+    "ep": "EP 07",
+    "youtubeId": "kffacxfA7g4",
+    "youtubeUrl": "https://www.youtube.com/watch?v=kffacxfA7g4"
+  },
+  {
+    "id": 8,
+    "title": "TIAA Recruitment — Where Finance Meets Tech",
+    "guest": "Uzma Shaikh",
+    "company": "TIAA",
+    "tag": "finance",
+    "ep": "EP 08",
+    "youtubeId": "w0MQ5CEZE9c",
+    "youtubeUrl": "https://www.youtube.com/watch?v=w0MQ5CEZE9c"
+  },
+  {
+    "id": 9,
+    "title": "Microsoft — From Campus to Corporate",
+    "guest": "Rohan Mehta",
+    "company": "Microsoft",
+    "tag": "tech",
+    "ep": "EP 09",
+    "youtubeId": "oYm66fHqHKE",
+    "youtubeUrl": "https://www.youtube.com/watch?v=oYm66fHqHKE"
+  },
+  {
+    "id": 10,
+    "title": "Infosys Interview Experience",
+    "guest": "Sneha Kulkarni",
+    "company": "Infosys",
+    "tag": "career",
+    "ep": "EP 10",
+    "youtubeId": "24Gw8mdeI5E",
+    "youtubeUrl": "https://www.youtube.com/watch?v=24Gw8mdeI5E"
+  },
+  {
+    "id": 11,
+    "title": "Building a Career in Product Design",
+    "guest": "Aakash Joshi",
+    "company": "Design Studio",
+    "tag": "design",
+    "ep": "EP 11",
+    "youtubeId": "sSqVw40Weg4",
+    "youtubeUrl": "https://www.youtube.com/watch?v=sSqVw40Weg4"
+  },
+  {
+    "id": 12,
+    "title": "Supply Chain & Operations — A Real Career Path",
+    "guest": "Mayur Bhosale",
+    "company": "Logistics",
+    "tag": "ops",
+    "ep": "EP 12",
+    "youtubeId": "IhP4kcURt0w",
+    "youtubeUrl": "https://www.youtube.com/watch?v=IhP4kcURt0w"
+  },
+  {
+    "id": 13,
+    "title": "From Software Engineer to Entrepreneur",
+    "guest": "Tanvi Gupta",
+    "company": "Startup Founder",
+    "tag": "startup",
+    "ep": "EP 13",
+    "youtubeId": "hY7m5jjJ9mM",
+    "youtubeUrl": "https://www.youtube.com/watch?v=hY7m5jjJ9mM"
+  },
+  {
+    "id": 14,
+    "title": "Finance Career — CFA, MBA & Beyond",
+    "guest": "Kunal Desai",
+    "company": "Finance",
+    "tag": "finance",
+    "ep": "EP 14",
+    "youtubeId": "lP8ZRYrz6Gk",
+    "youtubeUrl": "https://www.youtube.com/watch?v=lP8ZRYrz6Gk"
+  },
+  {
+    "id": 15,
+    "title": "Zeus Technologies — Inside the Culture",
+    "guest": "Priti More",
+    "company": "Zeus",
+    "tag": "tech",
+    "ep": "EP 15",
+    "youtubeId": "XtCt-x_C-v0",
+    "youtubeUrl": "https://www.youtube.com/watch?v=XtCt-x_C-v0"
+  },
+  {
+    "id": 16,
+    "title": "Marketing in the Age of AI",
+    "guest": "Neha Sharma",
+    "company": "D2C Brand",
+    "tag": "startup",
+    "ep": "EP 16",
+    "youtubeId": "cvg8M0WX2UQ",
+    "youtubeUrl": "https://www.youtube.com/watch?v=cvg8M0WX2UQ"
+  },
+  {
+    "id": 17,
+    "title": "UX Research — The Untold Career Path",
+    "guest": "Aditi Rane",
+    "company": "Product Studio",
+    "tag": "design",
+    "ep": "EP 17",
+    "youtubeId": "6kE_wTv3EKU",
+    "youtubeUrl": "https://www.youtube.com/watch?v=6kE_wTv3EKU"
+  },
+  {
+    "id": 18,
+    "title": "HCL Technologies — Navigating a Giant",
+    "guest": "Ravi Tiwari",
+    "company": "HCL",
+    "tag": "career",
+    "ep": "EP 18",
+    "youtubeId": "oHg5SJYRHA0",
+    "youtubeUrl": "https://www.youtube.com/watch?v=oHg5SJYRHA0"
+  }
+]

@@ -8,570 +8,191 @@
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #fff2d8;
     --green: #0aa174;
     --green-dark: #087d5a;
-    --green-light: #d4f0e6;
-    --ink: #232323;
-    --ink-60: rgba(35,35,35,0.6);
-    --ink-20: rgba(35,35,35,0.12);
-    --white: #ffffff;
-    --warm-mid: #f5e8c4;
+    --green-dim: rgba(10,161,116,0.13);
+    --green-border: rgba(10,161,116,0.26);
+    --bg:  #0d0d0d;
+    --bg2: #111111;
+    --bg3: #181818;
+    --bg4: #202020;
+    --text:  #efefef;
+    --text2: rgba(239,239,239,0.52);
+    --text3: rgba(239,239,239,0.26);
+    --border:  rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* ── SCROLLBAR ── */
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
   ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,242,216,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--ink-20);
-    padding: 0 2rem;
-    height: 60px;
+    background: rgba(13,13,13,0.9); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem; height: 60px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 6px;
-    text-decoration: none;
-  }
-  .logo-box {
-    background: var(--ink);
-    border-radius: 8px;
-    padding: 5px 10px;
-    display: flex; align-items: center;
-  }
-  .logo-deva {
-    font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 17px;
-    color: #fff;
-    line-height: 1;
-  }
-  .logo-os {
-    font-family: 'Syne', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    color: var(--green);
-    line-height: 1;
-  }
-  .logo-label {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-  }
-  .nav-links {
-    display: flex; align-items: center; gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--ink-60);
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    background: var(--green) !important;
-    color: #fff !important;
-    padding: 7px 18px;
-    border-radius: 20px;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--green-dark) !important; color: #fff !important; }
+  .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .logo-box { background: var(--bg3); border: 1px solid var(--border2); border-radius: 8px; padding: 5px 11px; display: flex; align-items: center; }
+  .logo-deva { font-family: 'Tiro Devanagari Hindi', serif; font-size: 17px; color: #fff; line-height: 1; }
+  .logo-os { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 800; color: var(--green); line-height: 1; }
+  .logo-label { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text3); }
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text2); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { background: var(--green) !important; color: #fff !important; padding: 7px 18px; border-radius: 20px; font-size: 13px !important; font-weight: 500 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
 
-  /* ── HERO ── */
-  .hero {
-    padding: 130px 2rem 80px;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-  }
+  /* HERO */
+  .hero-wrap { background: var(--bg); }
+  .hero { padding: 136px 2.5rem 84px; max-width: 920px; margin: 0 auto; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--green-light);
-    color: var(--green-dark);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 28px;
+    background: var(--green-dim); border: 1px solid var(--green-border);
+    color: var(--green); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 28px;
   }
-  .hero-eyebrow::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    display: inline-block;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 20px;
-  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: var(--text); margin-bottom: 22px; }
   .hero h1 span { color: var(--green); }
-  .hero-sub {
-    font-size: 17px;
-    color: var(--ink-60);
-    font-weight: 300;
-    max-width: 540px;
-    line-height: 1.7;
-    margin-bottom: 36px;
-  }
-  .hero-actions {
-    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  }
-  .btn-primary {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 13px 28px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-primary:hover { background: var(--green); transform: translateY(-1px); }
-  .btn-outline {
-    border: 1.5px solid var(--ink-20);
-    color: var(--ink);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: border-color 0.2s, background 0.2s;
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent;
-  }
-  .btn-outline:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
-  .hero-stats {
-    margin-top: 60px;
-    display: flex; gap: 40px; flex-wrap: wrap;
-    padding-top: 32px;
-    border-top: 1px solid var(--ink-20);
-  }
+  .hero-sub { font-size: 17px; color: var(--text2); font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
+  .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { background: var(--text); color: var(--bg); padding: 13px 28px; border-radius: 30px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background 0.2s, color 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--green); color: #fff; transform: translateY(-1px); }
+  .btn-outline { border: 1.5px solid var(--border2); color: var(--text2); padding: 12px 24px; border-radius: 30px; font-size: 15px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; background: transparent; }
+  .btn-outline:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+  .hero-stats { margin-top: 58px; display: flex; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border); }
   .stat-item { display: flex; flex-direction: column; }
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1;
-  }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1; }
   .stat-num span { color: var(--green); }
-  .stat-label { font-size: 13px; color: var(--ink-60); margin-top: 4px; }
+  .stat-label { font-size: 13px; color: var(--text2); margin-top: 4px; }
 
-  /* ── LISTEN ON ── */
-  .listen-bar {
-    background: var(--ink);
-    padding: 18px 2rem;
-  }
-  .listen-inner {
-    max-width: 900px; margin: 0 auto;
-    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-  }
-  .listen-label { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-  .platform-links { display: flex; gap: 12px; flex-wrap: wrap; }
-  .platform-pill {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.8);
-    font-size: 13px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    display: flex; align-items: center; gap: 6px;
-  }
+  /* LISTEN BAR */
+  .listen-bar { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 2.5rem; }
+  .listen-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .listen-label { font-size: 11px; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+  .platform-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .platform-pill { background: var(--bg3); border: 1px solid var(--border2); color: var(--text2); font-size: 13px; padding: 6px 16px; border-radius: 20px; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
   .platform-pill:hover { background: var(--green); color: #fff; border-color: var(--green); }
 
-  /* ── SECTION ── */
-  section { padding: 80px 2rem; }
-  .section-inner { max-width: 900px; margin: 0 auto; }
-  .section-tag {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--green);
-    margin-bottom: 10px; display: block;
-  }
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    line-height: 1.15;
-    margin-bottom: 40px;
-  }
+  /* SECTIONS */
+  section { padding: 84px 2.5rem; }
+  .section-inner { max-width: 920px; margin: 0 auto; }
+  .section-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.025em; color: var(--text); line-height: 1.15; margin-bottom: 40px; }
 
-  /* ── EPISODES ── */
-  #episodes { background: var(--white); }
-  .search-filter-row {
-    display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap;
-  }
-  .search-box {
-    flex: 1; min-width: 200px;
-    display: flex; align-items: center; gap: 10px;
-    background: var(--cream);
-    border: 1.5px solid var(--ink-20);
-    border-radius: 10px;
-    padding: 10px 16px;
-    transition: border-color 0.2s;
-  }
+  /* EPISODES */
+  #episodes { background: var(--bg2); }
+  .search-filter-row { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+  .search-box { flex: 1; min-width: 220px; display: flex; align-items: center; gap: 10px; background: var(--bg3); border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 16px; transition: border-color 0.2s; }
   .search-box:focus-within { border-color: var(--green); }
-  .search-box svg { color: var(--ink-60); flex-shrink: 0; }
-  .search-box input {
-    border: none; background: transparent; outline: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; color: var(--ink); width: 100%;
-  }
-  .search-box input::placeholder { color: var(--ink-60); }
-  .filter-tabs {
-    display: flex; gap: 8px; flex-wrap: wrap;
-  }
-  .filter-btn {
-    padding: 9px 18px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 400;
-    font-family: 'DM Sans', sans-serif;
-    border: 1.5px solid var(--ink-20);
-    background: transparent;
-    color: var(--ink-60);
-    cursor: pointer;
-    transition: all 0.18s;
-  }
-  .filter-btn.active, .filter-btn:hover {
-    background: var(--green);
-    border-color: var(--green);
-    color: #fff;
-  }
-  .episodes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-  .ep-card {
-    background: var(--cream);
-    border: 1px solid var(--ink-20);
-    border-radius: 14px;
-    padding: 20px;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .ep-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--green);
-    box-shadow: 0 8px 30px rgba(10,161,116,0.12);
-  }
-  .ep-thumb {
-    width: 100%; aspect-ratio: 16/9;
-    border-radius: 8px;
-    background: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
-  .ep-thumb-inner {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem;
-  }
-  .ep-play-btn {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 1.5px solid rgba(255,255,255,0.3);
-    display: flex; align-items: center; justify-content: center;
-    position: absolute;
-    bottom: 10px; right: 10px;
-    transition: background 0.2s;
-  }
+  .search-box svg { color: var(--text3); flex-shrink: 0; }
+  .search-box input { border: none; background: transparent; outline: none; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); width: 100%; }
+  .search-box input::placeholder { color: var(--text3); }
+  .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn { padding: 9px 18px; border-radius: 8px; font-size: 13px; font-family: 'DM Sans', sans-serif; border: 1.5px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.18s; }
+  .filter-btn.active, .filter-btn:hover { background: var(--green); border-color: var(--green); color: #fff; }
+  .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .ep-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 14px; padding: 18px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 11px; }
+  .ep-card:hover { transform: translateY(-3px); border-color: var(--green); box-shadow: 0 8px 32px rgba(10,161,116,0.13); }
+  .ep-thumb { width: 100%; aspect-ratio: 16/9; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; font-size: 2rem; }
+  .ep-play-btn { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; position: absolute; bottom: 10px; right: 10px; transition: all 0.2s; }
   .ep-card:hover .ep-play-btn { background: var(--green); border-color: var(--green); }
-  .ep-meta {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 8px;
-  }
-  .ep-tag {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 3px 10px; border-radius: 20px;
-  }
-  .tag-tech { background: #ddf0e8; color: var(--green-dark); }
-  .tag-career { background: #fce8d6; color: #b85c1a; }
-  .tag-finance { background: #e8e4f8; color: #5b45a8; }
-  .tag-design { background: #fde8f0; color: #b81a5a; }
-  .tag-ops { background: #e4f0fd; color: #1a5ab8; }
-  .tag-startup { background: #f8f4e4; color: #8a7a1a; }
-  .ep-num { font-size: 12px; color: var(--ink-60); }
-  .ep-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px; font-weight: 700;
-    color: var(--ink); line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .ep-guest { font-size: 13px; color: var(--ink-60); }
-  .ep-company {
-    font-size: 12px; font-weight: 500;
-    color: var(--green-dark);
-    background: var(--green-light);
-    padding: 3px 10px; border-radius: 6px;
-    display: inline-block;
-  }
-  .no-results {
-    text-align: center; padding: 60px 20px;
-    color: var(--ink-60); font-size: 15px;
-    grid-column: 1/-1;
-    display: none;
-  }
+  .ep-meta { display: flex; align-items: center; justify-content: space-between; }
+  .ep-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+  .tag-tech    { background: rgba(10,161,116,0.14);  color: #4dd4a8; }
+  .tag-career  { background: rgba(220,120,50,0.14);  color: #f0975a; }
+  .tag-finance { background: rgba(120,100,220,0.14); color: #a897f0; }
+  .tag-design  { background: rgba(220,60,130,0.14);  color: #f07ab5; }
+  .tag-ops     { background: rgba(60,130,220,0.14);  color: #7ab5f0; }
+  .tag-startup { background: rgba(200,170,30,0.14);  color: #d4c040; }
+  .ep-num { font-size: 12px; color: var(--text3); }
+  .ep-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ep-guest { font-size: 13px; color: var(--text2); }
+  .ep-company { font-size: 12px; font-weight: 500; color: var(--green); background: var(--green-dim); padding: 3px 10px; border-radius: 6px; display: inline-block; }
+  .no-results { text-align: center; padding: 60px 20px; color: var(--text2); font-size: 15px; grid-column: 1/-1; display: none; }
 
-  /* ── GUEST CTA ── */
-  #guest {
-    background: var(--ink);
-  }
-  .guest-inner {
-    max-width: 900px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-    align-items: center;
-  }
-  .guest-left .section-tag { color: var(--green); }
-  .guest-left .section-title { color: var(--cream); margin-bottom: 16px; }
-  .guest-left p { color: rgba(255,242,216,0.6); font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
-  .btn-green {
-    background: var(--green);
-    color: #fff;
-    padding: 13px 28px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: background 0.2s, transform 0.15s;
-  }
+  /* GUEST */
+  #guest { background: var(--bg); }
+  .guest-inner { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .guest-left .section-title { margin-bottom: 16px; }
+  .guest-left p { color: var(--text2); font-size: 15px; line-height: 1.75; margin-bottom: 28px; }
+  .btn-green { background: var(--green); color: #fff; padding: 13px 28px; border-radius: 30px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s, transform 0.15s; }
   .btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
-  .guest-form {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 28px;
-  }
-  .guest-form h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 16px; font-weight: 700;
-    color: var(--cream); margin-bottom: 20px;
-  }
+  .guest-form { background: var(--bg3); border: 1px solid var(--border2); border-radius: 16px; padding: 28px; }
+  .guest-form h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
   .form-group { margin-bottom: 14px; }
-  .form-group label {
-    display: block; font-size: 12px; color: rgba(255,255,255,0.4);
-    margin-bottom: 5px; letter-spacing: 0.06em; text-transform: uppercase;
-  }
-  .form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-    resize: none;
-  }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group label { display: block; font-size: 11px; color: var(--text3); margin-bottom: 5px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--bg4); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); outline: none; transition: border-color 0.2s; resize: none; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); }
   .form-group select { cursor: pointer; }
-  .form-group select option { background: #232323; color: #fff; }
-  .btn-submit {
-    width: 100%;
-    background: var(--green);
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 4px;
-    transition: background 0.2s;
-  }
+  .form-group select option { background: #1a1a1a; color: #fff; }
+  .btn-submit { width: 100%; background: var(--green); color: #fff; border: none; padding: 12px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 4px; transition: background 0.2s; }
   .btn-submit:hover { background: var(--green-dark); }
 
-  /* ── ABOUT ── */
-  #about { background: var(--cream); }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
-  }
-  .about-left p {
-    font-size: 15px; color: var(--ink-60); line-height: 1.8; margin-bottom: 16px;
-  }
-  .about-left p strong { color: var(--ink); font-weight: 500; }
-  .timeline {
-    display: flex; flex-direction: column; gap: 0;
-  }
-  .tl-item {
-    display: flex; gap: 16px; position: relative;
-    padding-bottom: 28px;
-  }
+  /* ABOUT */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .about-left p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 16px; }
+  .about-left p strong { color: var(--text); font-weight: 500; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-item { display: flex; gap: 16px; padding-bottom: 28px; }
   .tl-item:last-child { padding-bottom: 0; }
   .tl-left { display: flex; flex-direction: column; align-items: center; }
-  .tl-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--green);
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-  .tl-line {
-    width: 1px; flex: 1; background: var(--ink-20);
-    margin-top: 6px;
-  }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 5px; }
+  .tl-line { width: 1px; flex: 1; background: var(--border); margin-top: 6px; }
   .tl-item:last-child .tl-line { display: none; }
-  .tl-content {}
-  .tl-year { font-size: 11px; font-weight: 600; color: var(--green); letter-spacing: 0.08em; margin-bottom: 3px; }
-  .tl-text { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
-  .tl-text strong { color: var(--ink); font-weight: 500; }
-  .companies-wrap {
-    margin-top: 32px;
-  }
-  .companies-label { font-size: 12px; color: var(--ink-60); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
-  .company-pills {
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .company-pill {
-    background: var(--white);
-    border: 1px solid var(--ink-20);
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 5px 14px;
-    color: var(--ink);
-    font-weight: 400;
-  }
+  .tl-year { font-size: 11px; font-weight: 600; color: var(--green); letter-spacing: 0.08em; margin-bottom: 4px; }
+  .tl-text { font-size: 14px; color: var(--text2); line-height: 1.65; }
+  .tl-text strong { color: var(--text); font-weight: 500; }
+  .companies-wrap { margin-top: 32px; }
+  .companies-label { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  .company-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .company-pill { background: var(--bg3); border: 1px solid var(--border); border-radius: 20px; font-size: 12px; padding: 5px 14px; color: var(--text2); }
 
-  /* ── CAREERS ── */
-  #careers { background: var(--warm-mid); }
+  /* CAREERS */
+  #careers { background: var(--bg); }
   .careers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .job-card {
-    background: var(--white);
-    border: 1px solid var(--ink-20);
-    border-radius: 16px;
-    padding: 28px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .job-card:hover { border-color: var(--green); box-shadow: 0 6px 24px rgba(10,161,116,0.1); }
-  .job-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--green-light);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
-    font-size: 20px;
-  }
-  .job-type {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--green-dark);
-    background: var(--green-light);
-    padding: 3px 10px; border-radius: 20px;
-    display: inline-block; margin-bottom: 10px;
-  }
-  .job-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 19px; font-weight: 700;
-    color: var(--ink); margin-bottom: 10px;
-    line-height: 1.25;
-  }
-  .job-desc {
-    font-size: 14px; color: var(--ink-60); line-height: 1.65; margin-bottom: 20px;
-  }
+  .job-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .job-card:hover { border-color: var(--green); box-shadow: 0 6px 28px rgba(10,161,116,0.12); }
+  .job-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--green-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+  .job-type { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); background: var(--green-dim); padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+  .job-title { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.25; }
+  .job-desc { font-size: 14px; color: var(--text2); line-height: 1.65; margin-bottom: 20px; }
   .job-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-  .job-skill {
-    background: var(--cream);
-    border: 1px solid var(--ink-20);
-    font-size: 12px; color: var(--ink-60);
-    padding: 3px 10px; border-radius: 6px;
-  }
-  .btn-apply {
-    width: 100%;
-    background: var(--ink);
-    color: var(--cream);
-    border: none;
-    padding: 11px;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-    text-decoration: none;
-    display: block; text-align: center;
-  }
-  .btn-apply:hover { background: var(--green); }
+  .job-skill { background: var(--bg4); border: 1px solid var(--border); font-size: 12px; color: var(--text2); padding: 3px 10px; border-radius: 6px; }
+  .btn-apply { width: 100%; background: var(--bg4); color: var(--text); border: 1px solid var(--border2); padding: 11px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: block; text-align: center; }
+  .btn-apply:hover { background: var(--green); border-color: var(--green); color: #fff; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    padding: 48px 2rem 28px;
-  }
-  .footer-inner { max-width: 900px; margin: 0 auto; }
-  .footer-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 40px; gap: 40px; flex-wrap: wrap;
-  }
-  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 10px; max-width: 240px; line-height: 1.6; }
-  .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
-  .footer-col h4 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; font-weight: 400; }
-  .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.65); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  /* FOOTER */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 52px 2.5rem 28px; }
+  .footer-inner { max-width: 920px; margin: 0 auto; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 44px; gap: 40px; flex-wrap: wrap; }
+  .footer-brand p { font-size: 13px; color: var(--text3); margin-top: 10px; max-width: 240px; line-height: 1.65; }
+  .footer-links { display: flex; gap: 52px; flex-wrap: wrap; }
+  .footer-col h4 { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); margin-bottom: 16px; font-weight: 400; }
+  .footer-col a { display: block; font-size: 14px; color: var(--text2); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--green); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 20px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
-  }
-  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { font-size: 12px; color: var(--text3); }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 700px) {
-    nav { padding: 0 1rem; }
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    nav { padding: 0 1.2rem; }
     .nav-links { display: none; }
     section { padding: 60px 1.2rem; }
+    .hero { padding: 104px 1.2rem 56px; }
     .guest-inner, .about-grid, .careers-grid { grid-template-columns: 1fr; gap: 36px; }
-    .hero { padding: 100px 1.2rem 60px; }
-    .hero-stats { gap: 24px; }
-    .footer-links { gap: 28px; }
+    .hero-stats { gap: 22px; }
+    .listen-bar { padding: 14px 1.2rem; }
   }
 </style>
 </head>
@@ -580,9 +201,7 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <div class="logo-box">
-      <span class="logo-deva">कोड</span><span class="logo-os">OS</span>
-    </div>
+    <div class="logo-box"><span class="logo-deva">कोड</span><span class="logo-os">OS</span></div>
     <span class="logo-label">Podcast</span>
   </a>
   <ul class="nav-links">
@@ -594,45 +213,30 @@
 </nav>
 
 <!-- HERO -->
-<section style="padding-top:0; padding-bottom:0; background:var(--cream);">
-<div class="hero">
-  <div class="hero-eyebrow">New episodes every week</div>
-  <h1>Real stories.<br>Every domain.<br><span>One mic.</span></h1>
-  <p class="hero-sub">From tech placement prep to boardroom insights — CodeOS Podcast brings unfiltered career conversations from professionals across every industry.</p>
-  <div class="hero-actions">
-    <a href="#episodes" class="btn-primary">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-      Browse Episodes
-    </a>
-    <a href="#guest" class="btn-outline">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M19 21a7 7 0 1 0-14 0"/><path d="M19 8v6M22 11h-6"/></svg>
-      Be a Guest
-    </a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat-item">
-      <span class="stat-num">1<span>L</span>+</span>
-      <span class="stat-label">YouTube Views</span>
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-eyebrow">New episodes every week</div>
+    <h1>Real stories.<br>Every domain.<br><span>One mic.</span></h1>
+    <p class="hero-sub">From tech placement prep to boardroom insights — कोडOS Podcast brings unfiltered career conversations from professionals across every industry.</p>
+    <div class="hero-actions">
+      <a href="#episodes" class="btn-primary">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Browse Episodes
+      </a>
+      <a href="#guest" class="btn-outline">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M19 21a7 7 0 1 0-14 0"/><path d="M19 8v6M22 11h-6"/></svg>
+        Be a Guest
+      </a>
     </div>
-    <div class="stat-item">
-      <span class="stat-num">1K<span>+</span></span>
-      <span class="stat-label">Subscribers</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">1500<span>+</span></span>
-      <span class="stat-label">Students Mentored</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">25<span>+</span></span>
-      <span class="stat-label">Workshops Organised</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">2021</span>
-      <span class="stat-label">Founded</span>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">1<span>L+</span></span><span class="stat-label">YouTube Views</span></div>
+      <div class="stat-item"><span class="stat-num">1K<span>+</span></span><span class="stat-label">Subscribers</span></div>
+      <div class="stat-item"><span class="stat-num">1500<span>+</span></span><span class="stat-label">Students Mentored</span></div>
+      <div class="stat-item"><span class="stat-num">25<span>+</span></span><span class="stat-label">Workshops</span></div>
+      <div class="stat-item"><span class="stat-num">2021</span><span class="stat-label">Founded</span></div>
     </div>
   </div>
 </div>
-</section>
 
 <!-- LISTEN ON -->
 <div class="listen-bar">
@@ -661,181 +265,153 @@
 
 <!-- EPISODES -->
 <section id="episodes">
-<div class="section-inner">
-  <span class="section-tag">All Episodes</span>
-  <h2 class="section-title">Every conversation,<br>one search away.</h2>
-
-  <div class="search-filter-row">
-    <div class="search-box">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="searchInput" placeholder="Search episodes, guests, companies…">
+  <div class="section-inner">
+    <span class="section-tag">All Episodes</span>
+    <h2 class="section-title">Every conversation,<br>one search away.</h2>
+    <div class="search-filter-row">
+      <div class="search-box">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search episodes, guests, companies…">
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-tag="all">All</button>
+        <button class="filter-btn" data-tag="tech">Tech</button>
+        <button class="filter-btn" data-tag="career">Career</button>
+        <button class="filter-btn" data-tag="finance">Finance</button>
+        <button class="filter-btn" data-tag="design">Design</button>
+        <button class="filter-btn" data-tag="ops">Operations</button>
+        <button class="filter-btn" data-tag="startup">Startup</button>
+      </div>
     </div>
-    <div class="filter-tabs" id="filterTabs">
-      <button class="filter-btn active" data-tag="all">All</button>
-      <button class="filter-btn" data-tag="tech">Tech</button>
-      <button class="filter-btn" data-tag="career">Career</button>
-      <button class="filter-btn" data-tag="finance">Finance</button>
-      <button class="filter-btn" data-tag="design">Design</button>
-      <button class="filter-btn" data-tag="ops">Operations</button>
-      <button class="filter-btn" data-tag="startup">Startup</button>
-    </div>
+    <div class="episodes-grid" id="episodesGrid"></div>
+    <p class="no-results" id="noResults">No episodes found. Try a different search or filter.</p>
   </div>
-
-  <div class="episodes-grid" id="episodesGrid">
-    <!-- dynamically rendered -->
-  </div>
-  <p class="no-results" id="noResults">No episodes found. Try a different search or filter.</p>
-</div>
 </section>
 
 <!-- GUEST CTA -->
-<section id="guest" style="padding:80px 2rem;">
-<div class="guest-inner">
-  <div class="guest-left">
-    <span class="section-tag">Be a Guest</span>
-    <h2 class="section-title">Your story<br>deserves to<br>be heard.</h2>
-    <p>Are you a working professional, founder, or domain expert with a career story worth sharing? We'd love to have you on कोडOS Podcast. No scripts — just an honest conversation about your journey.</p>
-    <a href="mailto:hello@codeos.in" class="btn-green">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Reach Out Directly
-    </a>
+<section id="guest">
+  <div class="guest-inner">
+    <div class="guest-left">
+      <span class="section-tag">Be a Guest</span>
+      <h2 class="section-title">Your story<br>deserves to<br>be heard.</h2>
+      <p>Are you a working professional, founder, or domain expert with a career story worth sharing? We'd love to have you on कोडOS Podcast. No scripts — just an honest conversation about your journey.</p>
+      <a href="mailto:hello@codeos.in" class="btn-green">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Reach Out Directly
+      </a>
+    </div>
+    <div class="guest-form">
+      <h3>Apply to be a guest</h3>
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Rahul Sharma"></div>
+      <div class="form-group"><label>Current Role & Company</label><input type="text" placeholder="Senior Engineer at Microsoft"></div>
+      <div class="form-group">
+        <label>Domain</label>
+        <select>
+          <option value="">Select your domain…</option>
+          <option>Technology</option>
+          <option>Finance & Fintech</option>
+          <option>Design & Product</option>
+          <option>Operations & Supply Chain</option>
+          <option>Marketing & Growth</option>
+          <option>Entrepreneurship</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>What's your story?</label><textarea rows="3" placeholder="A brief about your career journey and what you'd like to talk about…"></textarea></div>
+      <button class="btn-submit" onclick="handleApply(this)">Submit Application →</button>
+    </div>
   </div>
-  <div class="guest-form">
-    <h3>Apply to be a guest</h3>
-    <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" placeholder="Rahul Sharma">
-    </div>
-    <div class="form-group">
-      <label>Current Role & Company</label>
-      <input type="text" placeholder="Senior Engineer at Microsoft">
-    </div>
-    <div class="form-group">
-      <label>Domain</label>
-      <select>
-        <option value="">Select your domain…</option>
-        <option>Technology</option>
-        <option>Finance & Fintech</option>
-        <option>Design & Product</option>
-        <option>Operations & Supply Chain</option>
-        <option>Marketing & Growth</option>
-        <option>Entrepreneurship</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>What's your story?</label>
-      <textarea rows="3" placeholder="A brief about your career journey and what you'd like to talk about…"></textarea>
-    </div>
-    <button class="btn-submit" onclick="handleApply(this)">Submit Application →</button>
-  </div>
-</div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<div class="section-inner">
-  <span class="section-tag">About Us</span>
-  <h2 class="section-title">Built by learners,<br>for everyone.</h2>
-  <div class="about-grid">
-    <div class="about-left">
-      <p>कोडOS started in <strong>May 2021</strong> as an edtech initiative — running bootcamps, online coding hackathons, and workshops on <strong>Java, Web Development, Cloud, and Python</strong>. Over 4 years we've mentored <strong>1,500+ students</strong> and organised <strong>25+ technical workshops</strong>.</p>
-      <p>Along the way, we noticed something. The most valuable lessons weren't in our course material — they were in the real interview rooms and career decisions of the people who had done it. So we started recording those conversations.</p>
-      <p>What began as interview prep for TCS, Capgemini and Accenture has now grown into a <strong>full-spectrum career podcast</strong> — spanning technology, finance, design, operations, and beyond. Available on Spotify, Google Podcasts, Amazon Music, and YouTube.</p>
-      <div class="companies-wrap">
-        <p class="companies-label">Guests from these companies</p>
-        <div class="company-pills">
-          <span class="company-pill">TCS</span>
-          <span class="company-pill">Microsoft</span>
-          <span class="company-pill">Capgemini</span>
-          <span class="company-pill">Infosys</span>
-          <span class="company-pill">Accenture</span>
-          <span class="company-pill">Zeus</span>
-          <span class="company-pill">LTI Mindtree</span>
-          <span class="company-pill">Hexaware</span>
-          <span class="company-pill">Cisco</span>
-          <span class="company-pill">TIAA</span>
-          <span class="company-pill">Security Innovation</span>
-          <span class="company-pill">Wipro</span>
-          <span class="company-pill">HCL</span>
-          <span class="company-pill">Cognizant</span>
+  <div class="section-inner">
+    <span class="section-tag">About Us</span>
+    <h2 class="section-title">Built by learners,<br>for everyone.</h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <p>कोडOS started in <strong>May 2021</strong> as an edtech initiative — running bootcamps, online coding hackathons, and workshops on <strong>Java, Web Development, Cloud, and Python</strong>. Over the years we've mentored <strong>1,500+ students</strong> and organised <strong>25+ technical workshops</strong>.</p>
+        <p>Along the way, we noticed something. The most valuable lessons weren't in our course material — they were in the real interview rooms and career decisions of people who had already done it. So we started recording those conversations.</p>
+        <p>What began as interview prep for TCS, Capgemini and Accenture has grown into a <strong>full-spectrum career podcast</strong> — spanning technology, finance, design, operations, startups, and beyond. Available on Spotify, Google Podcasts, Amazon Music, and YouTube.</p>
+        <div class="companies-wrap">
+          <p class="companies-label">Guests from these companies</p>
+          <div class="company-pills">
+            <span class="company-pill">TCS</span>
+            <span class="company-pill">Microsoft</span>
+            <span class="company-pill">Capgemini</span>
+            <span class="company-pill">Infosys</span>
+            <span class="company-pill">Accenture</span>
+            <span class="company-pill">Zeus</span>
+            <span class="company-pill">LTI Mindtree</span>
+            <span class="company-pill">Hexaware</span>
+            <span class="company-pill">Cisco</span>
+            <span class="company-pill">TIAA</span>
+            <span class="company-pill">Security Innovation</span>
+            <span class="company-pill">Wipro</span>
+            <span class="company-pill">HCL</span>
+            <span class="company-pill">Cognizant</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="about-right">
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-year">May 2021</div>
-            <div class="tl-text"><strong>Founded as EdTech.</strong> Launched with courses in Java, Web Dev, Cloud & Python. First online bootcamp organised.</div>
+      <div class="about-right">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content"><div class="tl-year">May 2021</div><div class="tl-text"><strong>Founded as EdTech.</strong> Launched with courses in Java, Web Dev, Cloud & Python. First online bootcamp organised.</div></div>
           </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-year">2022</div>
-            <div class="tl-text"><strong>1,500+ students mentored.</strong> 25+ coding workshops & online hackathons. Started collecting interview experiences from placed students.</div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content"><div class="tl-year">2022</div><div class="tl-text"><strong>1,500+ students mentored.</strong> 25+ coding workshops and online hackathons. Started capturing real placement experiences from students.</div></div>
           </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-year">2023</div>
-            <div class="tl-text"><strong>Podcast series launched.</strong> Interview experience episodes featuring professionals from TCS, Microsoft, Capgemini, Accenture and more.</div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content"><div class="tl-year">2023</div><div class="tl-text"><strong>Podcast series launched.</strong> Interview experience episodes with professionals from TCS, Microsoft, Capgemini, Accenture, Cisco, and more.</div></div>
           </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-year">2024–Now</div>
-            <div class="tl-text"><strong>Full pivot to podcast.</strong> Expanded beyond tech — finance, design, ops, startups. 1 lakh+ YouTube views, 1000+ subscribers.</div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content"><div class="tl-year">2024 – Now</div><div class="tl-text"><strong>Full pivot to podcast.</strong> Expanded beyond tech — finance, design, ops, startups. 1 lakh+ YouTube views, 1000+ subscribers.</div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
 <!-- CAREERS -->
 <section id="careers">
-<div class="section-inner">
-  <span class="section-tag">Join the Team</span>
-  <h2 class="section-title">Help us tell<br>better stories.</h2>
-  <div class="careers-grid">
-
-    <div class="job-card">
-      <div class="job-icon">🎬</div>
-      <div class="job-type">Part-time / Freelance</div>
-      <div class="job-title">Video Editor &amp; Cameraman</div>
-      <p class="job-desc">We're looking for someone who can operate a camera on-location and transform raw podcast footage into crisp, engaging videos for YouTube and short-form content for Instagram Reels and YouTube Shorts.</p>
-      <div class="job-skills">
-        <span class="job-skill">Premiere Pro / DaVinci</span>
-        <span class="job-skill">Camera operation</span>
-        <span class="job-skill">Color grading</span>
-        <span class="job-skill">Reels / Shorts editing</span>
+  <div class="section-inner">
+    <span class="section-tag">Join the Team</span>
+    <h2 class="section-title">Help us tell<br>better stories.</h2>
+    <div class="careers-grid">
+      <div class="job-card">
+        <div class="job-icon">🎬</div>
+        <div class="job-type">Part-time / Freelance</div>
+        <div class="job-title">Video Editor &amp; Cameraman</div>
+        <p class="job-desc">Operate a camera on location and transform raw podcast footage into crisp, engaging videos for YouTube and short-form clips for Instagram Reels and YouTube Shorts.</p>
+        <div class="job-skills">
+          <span class="job-skill">Premiere Pro / DaVinci</span>
+          <span class="job-skill">Camera operation</span>
+          <span class="job-skill">Color grading</span>
+          <span class="job-skill">Reels / Shorts editing</span>
+        </div>
+        <a href="mailto:careers@codeos.in?subject=Application: Video Editor & Cameraman" class="btn-apply">Apply Now →</a>
       </div>
-      <a href="mailto:careers@codeos.in?subject=Application: Video Editor & Cameraman" class="btn-apply">Apply Now →</a>
-    </div>
-
-    <div class="job-card">
-      <div class="job-icon">📱</div>
-      <div class="job-type">Part-time / Freelance</div>
-      <div class="job-title">Social Media Manager</div>
-      <p class="job-desc">Drive the कोडOS Podcast presence on Instagram, LinkedIn, and X. Create content calendars, repurpose episode clips, engage with the community, and grow the audience across platforms.</p>
-      <div class="job-skills">
-        <span class="job-skill">Instagram & LinkedIn</span>
-        <span class="job-skill">Content strategy</span>
-        <span class="job-skill">Canva / Figma</span>
-        <span class="job-skill">Analytics</span>
+      <div class="job-card">
+        <div class="job-icon">📱</div>
+        <div class="job-type">Part-time / Freelance</div>
+        <div class="job-title">Social Media Manager</div>
+        <p class="job-desc">Drive the कोडOS Podcast presence on Instagram, LinkedIn, and X. Create content calendars, repurpose episode clips, engage the community, and grow the audience.</p>
+        <div class="job-skills">
+          <span class="job-skill">Instagram & LinkedIn</span>
+          <span class="job-skill">Content strategy</span>
+          <span class="job-skill">Canva / Figma</span>
+          <span class="job-skill">Analytics</span>
+        </div>
+        <a href="mailto:careers@codeos.in?subject=Application: Social Media Manager" class="btn-apply">Apply Now →</a>
       </div>
-      <a href="mailto:careers@codeos.in?subject=Application: Social Media Manager" class="btn-apply">Apply Now →</a>
     </div>
-
+    <p style="font-size:13px; color:var(--text2); margin-top:20px;">Don't see your role? We're always open to collaborations. <a href="mailto:hello@codeos.in" style="color:var(--green); text-decoration:none;">Say hello →</a></p>
   </div>
-  <p style="font-size:13px; color:var(--ink-60); margin-top:20px;">Don't see your role? We're always open to collaborations. <a href="mailto:hello@codeos.in" style="color:var(--green); text-decoration:none;">Say hello →</a></p>
-</div>
 </section>
 
 <!-- FOOTER -->
@@ -844,10 +420,8 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="nav-logo" href="#" style="text-decoration:none;">
-          <div class="logo-box">
-            <span class="logo-deva">कोड</span><span class="logo-os">OS</span>
-          </div>
-          <span class="logo-label" style="color:rgba(255,255,255,0.4);">Podcast</span>
+          <div class="logo-box"><span class="logo-deva">कोड</span><span class="logo-os">OS</span></div>
+          <span class="logo-label">Podcast</span>
         </a>
         <p>Real conversations. Every domain. Built in India since 2021.</p>
       </div>
@@ -876,50 +450,45 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 कोडOS Podcast. Founded May 2021.</p>
-      <p style="color:rgba(255,255,255,0.2);">Made with care in India 🇮🇳</p>
+      <p>Made with care in India 🇮🇳</p>
     </div>
   </div>
 </footer>
 
 <script>
-const EPISODES = [
-  { id:1, title:"TCS Interview Experience", guest:"Anubhav Dixit", company:"TCS", tag:"tech", ep:"EP 01", bg:"#1a2a1a", emoji:"💻" },
-  { id:2, title:"Capgemini Placement Process — Tips & Tricks", guest:"Prathmesh Adhav", company:"Capgemini", tag:"tech", ep:"EP 02", bg:"#1a1a2a", emoji:"🏢" },
-  { id:3, title:"LTI Interview Experience — What to Expect", guest:"Varun Patil", company:"LTI Mindtree", tag:"tech", ep:"EP 03", bg:"#2a1a1a", emoji:"💼" },
-  { id:4, title:"Accenture Interview Experience", guest:"Omkar Kolte", company:"Accenture", tag:"career", ep:"EP 04", bg:"#1a2a24", emoji:"🎯" },
-  { id:5, title:"How to Get Started with Cyber Security", guest:"Siddhant Tambe", company:"Security Innovation", tag:"tech", ep:"EP 05", bg:"#1a1a2a", emoji:"🔐" },
-  { id:6, title:"Hexaware Interview Experience", guest:"Priya Nair", company:"Hexaware", tag:"tech", ep:"EP 06", bg:"#2a1a24", emoji:"⚙️" },
-  { id:7, title:"Cisco Interview Experience", guest:"Sanyukta Pawaskar", company:"Cisco", tag:"tech", ep:"EP 07", bg:"#1a2a2a", emoji:"🌐" },
-  { id:8, title:"TIAA Recruitment — Finance Meets Tech", guest:"Uzma Shaikh", company:"TIAA", tag:"finance", ep:"EP 08", bg:"#1f1a2a", emoji:"📊" },
-  { id:9, title:"Microsoft — From Campus to Corporate", guest:"Rohan Mehta", company:"Microsoft", tag:"tech", ep:"EP 09", bg:"#1a1f2a", emoji:"🪟" },
-  { id:10, title:"Infosys Interview Experience", guest:"Sneha Kulkarni", company:"Infosys", tag:"career", ep:"EP 10", bg:"#2a1a1a", emoji:"🖥️" },
-  { id:11, title:"Building a Career in Product Design", guest:"Aakash Joshi", company:"Startups", tag:"design", ep:"EP 11", bg:"#2a1a2a", emoji:"🎨" },
-  { id:12, title:"Supply Chain & Operations — A Career Path", guest:"Mayur Bhosale", company:"Logistics", tag:"ops", ep:"EP 12", bg:"#1a2a1a", emoji:"📦" },
-  { id:13, title:"From Engineer to Entrepreneur", guest:"Tanvi Gupta", company:"Startup Founder", tag:"startup", ep:"EP 13", bg:"#2a241a", emoji:"🚀" },
-  { id:14, title:"Finance Career — CFA & Beyond", guest:"Kunal Desai", company:"Finance", tag:"finance", ep:"EP 14", bg:"#1f2a1a", emoji:"💰" },
-  { id:15, title:"Zeus Technologies — Inside the Culture", guest:"Priti More", company:"Zeus", tag:"tech", ep:"EP 15", bg:"#1a1a2a", emoji:"⚡" },
-  { id:16, title:"Marketing in the Age of AI", guest:"Neha Sharma", company:"D2C Brand", tag:"startup", ep:"EP 16", bg:"#2a1a1a", emoji:"📣" },
-  { id:17, title:"UX Research — The Untold Career Path", guest:"Aditi Rane", company:"Product Studio", tag:"design", ep:"EP 17", bg:"#1a2a24", emoji:"🔍" },
-  { id:18, title:"HCL Technologies — Navigating a Giant", guest:"Ravi Tiwari", company:"HCL", tag:"career", ep:"EP 18", bg:"#241a2a", emoji:"🏛️" },
-];
+let EPISODES = [];
 
 const tagClass = { tech:"tag-tech", career:"tag-career", finance:"tag-finance", design:"tag-design", ops:"tag-ops", startup:"tag-startup" };
+const emojis   = { tech:"💻", career:"🎯", finance:"📊", design:"🎨", ops:"📦", startup:"🚀" };
+
+// Fetch episodes from JSON
+async function loadEpisodes() {
+  try {
+    const response = await fetch('episodes.json');
+    EPISODES = await response.json();
+    render(EPISODES);
+  } catch (error) {
+    console.error('Error loading episodes:', error);
+    // Fallback: render empty state
+    document.getElementById('noResults').style.display = 'block';
+  }
+}
+
+function getYouTubeThumbnail(youtubeId) {
+  // Using high-quality thumbnail from YouTube
+  return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+}
 
 function render(list) {
   const grid = document.getElementById('episodesGrid');
-  const noR = document.getElementById('noResults');
-  if (!list.length) {
-    grid.innerHTML = '';
-    noR.style.display = 'block';
-    return;
-  }
+  const noR  = document.getElementById('noResults');
+  if (!list.length) { grid.innerHTML = ''; noR.style.display = 'block'; return; }
   noR.style.display = 'none';
   grid.innerHTML = list.map(e => `
-    <a class="ep-card" href="https://youtube.com/@codeospodcasts" target="_blank">
-      <div class="ep-thumb" style="background:${e.bg}">
-        <div class="ep-thumb-inner">${e.emoji}</div>
+    <a class="ep-card" href="${e.youtubeUrl}" target="_blank">
+      <div class="ep-thumb" style="background:url('${getYouTubeThumbnail(e.youtubeId)}') center/cover no-repeat">
         <div class="ep-play-btn">
-          <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <svg width="11" height="11" fill="white" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         </div>
       </div>
       <div class="ep-meta">
@@ -933,29 +502,18 @@ function render(list) {
   `).join('');
 }
 
-let activeTag = 'all';
-let searchVal = '';
-
+let activeTag = 'all', searchVal = '';
 function applyFilters() {
   let list = EPISODES;
   if (activeTag !== 'all') list = list.filter(e => e.tag === activeTag);
   if (searchVal.trim()) {
     const q = searchVal.toLowerCase();
-    list = list.filter(e =>
-      e.title.toLowerCase().includes(q) ||
-      e.guest.toLowerCase().includes(q) ||
-      e.company.toLowerCase().includes(q) ||
-      e.tag.toLowerCase().includes(q)
-    );
+    list = list.filter(e => e.title.toLowerCase().includes(q) || e.guest.toLowerCase().includes(q) || e.company.toLowerCase().includes(q) || e.tag.toLowerCase().includes(q));
   }
   render(list);
 }
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchVal = e.target.value;
-  applyFilters();
-});
-
+document.getElementById('searchInput').addEventListener('input', e => { searchVal = e.target.value; applyFilters(); });
 document.getElementById('filterTabs').addEventListener('click', e => {
   const btn = e.target.closest('.filter-btn');
   if (!btn) return;
@@ -966,18 +524,18 @@ document.getElementById('filterTabs').addEventListener('click', e => {
 });
 
 function handleApply(btn) {
-  const form = btn.closest('.guest-form');
-  const inputs = form.querySelectorAll('input, select, textarea');
+  const inputs = btn.closest('.guest-form').querySelectorAll('input, select, textarea');
   let filled = true;
   inputs.forEach(i => { if (!i.value.trim()) filled = false; });
-  if (!filled) { btn.textContent = 'Please fill all fields.'; setTimeout(()=>btn.textContent='Submit Application →',2000); return; }
-  btn.textContent = '✓ Application sent!';
+  if (!filled) { btn.textContent = 'Please fill all fields.'; setTimeout(() => btn.textContent = 'Submit Application →', 2000); return; }
+  btn.textContent = "✓ Sent! We'll be in touch.";
   btn.style.background = 'var(--green-dark)';
   inputs.forEach(i => i.value = '');
-  setTimeout(()=>{ btn.textContent='Submit Application →'; btn.style.background=''; },3000);
+  setTimeout(() => { btn.textContent = 'Submit Application →'; btn.style.background = ''; }, 3500);
 }
 
-render(EPISODES);
+// Load episodes on page load
+loadEpisodes();
 </script>
 </body>
 </html>
